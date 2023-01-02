@@ -1,5 +1,9 @@
 package br.com.alura;
 
+import java.util.Iterator;
+import java.util.Set;
+import java.util.Vector;
+
 public class TestaCursoComAluno {
     public static void main(String[] args) {
         Curso javaCollecoes = new Curso("Dominando as coleções do Java", "Paulo Silveira");
@@ -35,6 +39,21 @@ public class TestaCursoComAluno {
         System.out.println("================");
         System.out.println("Validando HashCode, sempre mudar o hashCode, quando mudar (@Override) o equals");
         System.out.println(a1.hashCode() == turini.hashCode());
+
+        System.out.println("===============");
+        System.out.println("Usado em Legado");
+        System.out.println("===============");
+        System.out.println("Usando Iterator");
+        Set<Aluno> alunos = javaCollecoes.getAlunos();
+        Iterator<Aluno> iterador = alunos.iterator();
+        while(iterador.hasNext()){
+            Aluno proximo = iterador.next();
+            System.out.println(proximo);
+        }
+
+        System.out.println("=============");
+        System.out.println("Usando Vector");
+        Vector<Aluno> vetor = new Vector<>();
 
     }
 }
